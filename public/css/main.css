@@ -302,6 +302,17 @@
 
 .footer {
   margin-top: 75px;
+  position: fixed;
   width: 100%;
-  bottom: 0px;
+  left: 0;
+  bottom: 0;
   background: #F46197; }
+
+.twitter {
+  color: #00aced; }
+
+.discord {
+  color: #7289da; }
+
+.telegram {
+  color: #0088cc; }

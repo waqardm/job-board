@@ -1,5 +1,85 @@
 <%- include('inc/header') %>
 
-<h1>Contact</h1>
+<div class="columns is-mobile is-centered">
+    <div class="column is-half">
+        <div>
+            <h1 class="title is-1"> 📧 Contact Us </h1>
+            <p class="subtitle is-4 m-t-50">
+                We ❤️ to hear from you. You can use the form below to get in touch or email us on hello@domain.com
+            </p>
+        </div> <!-- intro-->
+    </div>
+</div>
+
+<div class="columns is-mobile is-centered">
+    <div class="column is-mobile is-half">
+        <div class="field">
+            <label class="label">Name</label>
+            <div class="control has-icons-left">
+                <input class="input" type="text" placeholder="Your Name">
+                <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input is-danger" type="email" placeholder="Your email">
+                <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+                </span>
+                <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+                </span>
+            </div>
+            <p class="help is-danger">This email is invalid</p>
+        </div>
+
+         <div class="field">
+            <label class="label">Confirm Email</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input is-danger" type="email" placeholder="Confirm email">
+                <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+                </span>
+                <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+                </span>
+            </div>
+            <p class="help is-danger">This email is invalid</p>
+        </div>
+
+        <div class="field">
+            <label class="label">Subject</label>
+            <div class="control">
+                <div class="select">
+                <select>
+                    <option>Select dropdown</option>
+                    <option>Just want to say 👋 or any other feedback</option>
+                    <option>I'm a candidate and I have a query</option>
+                    <option>I'm a hirer and I have a query</option>
+                    <option>Sponsorship / Marketing</option>
+                    <option>Something else</option>
+                </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+        <label class="label">Message</label>
+        <div class="control">
+            <textarea class="textarea" placeholder="Please provide as much detail as possible"></textarea>
+        </div>
+        </div>
+
+        <div class="field is-grouped is-pulled-right">
+            <div class="control">
+                <button class="button is-link">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <%- include('inc/footer') %>
