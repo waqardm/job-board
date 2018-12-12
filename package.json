@@ -1,0 +1,14 @@
+{
+  "name": "job-board",
+  "version": "1.0.0",
+  "description": "Job board for newbies",
+  "main": "index.html",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o /dist/css --recursive"
+  },
+  "author": "Waqar Mohammad",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
