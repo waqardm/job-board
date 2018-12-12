@@ -4,7 +4,7 @@
   "description": "Job board for newbies",
   "main": "index.html",
   "scripts": {
-    "sass": "node-sass -w scss/ -o /dist/css --recursive"
+    "sass": "node-sass -w scss/ -o dist/css --recursive"
   },
   "author": "Waqar Mohammad",
   "license": "UNLICENSED",
