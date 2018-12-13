@@ -10,4 +10,6 @@ router.get('/login', candidateController.getLogin);
 
 router.post('/register', validator.registerValidator, candidateController.postRegister);
 
+router.post('/login', validator.loginValidator, candidateController.postLogin);
+
 module.exports = router;

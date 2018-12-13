@@ -7,5 +7,6 @@ router.get('/', generalController.getIndex);
 router.get('/about', generalController.getAbout);
 router.get('/community', generalController.getCommunity);
 router.get('/contact', generalController.getContact);
+router.post('/logout', generalController.postLogout);
 
 module.exports = router;

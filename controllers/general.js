@@ -26,3 +26,15 @@ module.exports.getContact = (req, res) => {
     pageTitle: 'Contact Us | Job Board'
   });
 }
+
+// Handel User Logout
+module.exports.postLogout = (req, res, next) => {
+  req.session.destroy(error => {
+      if(error) {
+          next(error);
+      }
+      else {
+          res.redirect('/');
+      }
+  });
+}

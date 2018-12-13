@@ -42,7 +42,7 @@
                     </div>
                 </div>
 
-                <!-- if(!logged in) -->
+                <% if(!locals.user) { %>
         
                <div class="navbar-end">
                     <div class="navbar-item">
@@ -53,7 +53,8 @@
                     </div>
                 </div>
 
-                <!--- if(logged in)
+                <% } else { %>
+
 
                 <nav class="navbar" role="navigation" aria-label="dropdown navigation">
                     <div class="navbar-menu">
@@ -64,11 +65,16 @@
                                     <a class="navbar-item">Edit Profile</a>
                                     <a class="navbar-item">Elements</a>
                                     <a class="navbar-item">Components</a>
+                                    <form action="/logout" method="POST">
+                                        <button class="navbar-item">Logout</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </nav> -->
+                </nav>
+
+                <% } %>
             </div>
         </nav>
     </section> <!-- header -->

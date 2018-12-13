@@ -88,3 +88,77 @@ module.exports.postRegister = (req, res, next) => {
             next(error);
         }); 
 }
+
+// Handels Candidate Login
+module.exports.postLogin = (req, res, next) => {
+    
+    // Extracting Validation Errors from Express Validator
+    const validationError = validationResult(req).array();
+
+    // If Validation Error Exists, render the same page with error msg and old user input.
+    if(validationError.length > 0) {
+        let errors = validationError.map(obj => obj.msg);
+        return res.status(422).render('candidate/login', {
+            pageTitle: 'Candidate Login | Job Board',
+            userInput: {
+                email: req.body.email,
+                password: req.body.password,
+            },
+            errors: errors
+        });
+    }
+
+    // Find Candidate With Given Email
+    Candidate.findOne({ where : { email: req.body.email } })
+        .then(candidate => {
+
+            // Check If candidate Exists with the given Email
+            if(candidate){
+
+                // Check for the correct password
+                candidate.checkPassword(req.body.password)
+                    .then((isMatch) => {
+                        if(isMatch) {
+                            candidate.isCandidate = true;
+                            req.session.user = candidate;
+                            req.session.save(error => {
+                                if(error) {
+                                    next(error);
+                                }
+                                else {
+                                    return res.redirect('/');
+                                }
+                            });
+                        } else {
+                            let errors = ['Invalid Credentials'];
+                            return res.status(422).render('candidate/login', {
+                                pageTitle: 'Candidate Login | Job Board',
+                                userInput: {
+                                    email: req.body.email,
+                                    password: req.body.password,
+                                },
+                                errors: errors
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        next(error);
+                    });
+            } else {
+
+                // If no candidate exists render the same page with error message
+                let errors = ['Invalid Credentials'];
+                return res.status(422).render('candidate/login', {
+                    pageTitle: 'Candidate Login | Job Board',
+                    userInput: {
+                        email: req.body.email,
+                        password: req.body.password,
+                    },
+                    errors: errors
+                });
+            }
+        })
+        .catch(error => {
+            next(error);
+        });
+}

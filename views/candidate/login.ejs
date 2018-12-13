@@ -3,31 +3,33 @@
 <div class="columns is-mobile is-centered">
     <div class="column is-mobile is-half form-bg">
         <h1 class="title is-1"> 🤗 Welcome Back!</h1>
-        <div class="field">
-            <label class="label">Email</label>
-            <div class="control has-icons-left">
-                <input class="input" type="email" placeholder="Please enter your registered email">
-                <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-                </span>
+        <form action="/candidate/login" method="POST">
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="email" placeholder="Please enter your registered email" name="email" value="<%= locals.userInput ? userInput.email : ''%>">
+                    <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                    </span>
+                </div>
             </div>
-        </div>
-
-        <div class="field m-b-20">
-            <label class="label">Password</label>
-            <div class="control has-icons-left">
-                <input class="input" type="password" placeholder="Your password">
-                <span class="icon is-small is-left">
-                <i class="fas fa-lock"></i>
-                </span>
+    
+            <div class="field m-b-20">
+                <label class="label">Password</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="password" placeholder="Your password" name="password" value="<%= locals.userInput ? userInput.password : ''%>">
+                    <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                    </span>
+                </div>
             </div>
-        </div>
-
-        <div class="field">
-            <div class="control">
-                <button class="button is-link">Log In</button>
+    
+            <div class="field">
+                <div class="control">
+                    <button class="button is-link">Log In</button>
+                </div>
             </div>
-        </div>
+        </form>
         <div class="column is-pulled-right">
             <p><a href="#" class="has-text-grey-light">Forgotten Password</a></p>
         </div>

@@ -20,3 +20,10 @@ module.exports.registerValidator = [
             return true;
         })
 ]
+
+module.exports.loginValidator = [
+    body('email')
+        .isEmail()
+        .normalizeEmail()
+        .withMessage('Invalid Email'),
+]
