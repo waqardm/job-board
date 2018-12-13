@@ -7,7 +7,7 @@
     <title> <%= pageTitle %> </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
@@ -25,24 +25,50 @@
             </div>
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
-                    <a href="/about" class="navbar-item">About</a>
+                    <a href="/about" class="navbar-item">🛎 About</a>
                     <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">More</a>
+                        <a class="navbar-link">📌 More</a>
                         <div class="navbar-dropdown">
-                            <a href="/community" class="navbar-item">Community</a>
-                            <a href="/contact" class="navbar-item">Contact</a>
+                            <a href="/community" class="navbar-item">💬 Community</a>
+                            <a href="/contact" class="navbar-item">📨 Contact</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">✍️ Register</a>
+                        <div class="navbar-dropdown">
+                            <a href="/candidate/register" class="navbar-item"> 👩‍🏫 Candidate</a>
+                            <a href="/hirer/register" class="navbar-item">😎 Hirer</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- if(!logged in) -->
         
-                <div class="navbar-end">
+               <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a href="/register" class="button is-primary"><strong>Sign up</strong></a>
-                            <a href="/login" class="button is-light">Log in</a>
+                            <a href="/candidate/login" class="button is-primary "><i class="fas fa-sign-in-alt m-r-5"></i><strong>Candidate Log In</strong></a>
+                            <a href="/hirer/login" class="button is-primary "><i class="fas fa-sign-in-alt m-r-5"></i><strong>Hirer Log In</strong></a>
                         </div>
                     </div>
                 </div>
+
+                <!--- if(logged in)
+
+                <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+                    <div class="navbar-menu">
+                        <div class="navbar-end p-r-15">
+                            <div class="navbar-item has-dropdown is-hoverable ">
+                                <a class="navbar-link"><i class="fas fa-user-circle m-r-5"></i>Manage Profile</a>
+                                <div class="navbar-dropdown is-right">
+                                    <a class="navbar-item">Edit Profile</a>
+                                    <a class="navbar-item">Elements</a>
+                                    <a class="navbar-item">Components</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav> -->
             </div>
         </nav>
     </section> <!-- header -->

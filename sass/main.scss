@@ -26,7 +26,6 @@ $sides: (top, bottom, left, right); // Leave this variable alone
     background-color: #fafafa;
     height: 100%;
     display: block;
-    color: #000;
     border-radius: 3px;
     box-shadow: 3px 3px 0px #bababa;
 }
@@ -38,17 +37,19 @@ $sides: (top, bottom, left, right); // Leave this variable alone
     box-shadow: 3px 3px 0px #bababa;
 }
 
+.form-bg {
+  background-color: #fafafa;
+  display: block;
+  height: 75%;
+  padding: 30px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 0px #bababa;
+}
+
 
 //footer
 .footer {
   margin-top: 75px;
-<<<<<<< HEAD
-  width: 100%;
-  bottom: 0px;
-  background: #F46197;
-}
-
-=======
   position: fixed;
   width: 100%;
   left: 0;
@@ -73,5 +74,4 @@ $sides: (top, bottom, left, right); // Leave this variable alone
   color: #0088cc;
 }
 
->>>>>>> waqar
 
