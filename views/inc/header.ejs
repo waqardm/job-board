@@ -33,6 +33,7 @@
                             <a href="/contact" class="navbar-item">📨 Contact</a>
                         </div>
                     </div>
+                    <% if(!locals.user) { %>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">✍️ Register</a>
                         <div class="navbar-dropdown">
@@ -40,7 +41,9 @@
                             <a href="/hirer/register" class="navbar-item">😎 Hirer</a>
                         </div>
                     </div>
+                    <% } %>
                 </div>
+                
 
                 <% if(!locals.user) { %>
         
@@ -60,11 +63,10 @@
                     <div class="navbar-menu">
                         <div class="navbar-end p-r-15">
                             <div class="navbar-item has-dropdown is-hoverable ">
-                                <a class="navbar-link"><i class="fas fa-user-circle fa-lg m-r-5"></i>Manage Profile</a>
+                                <a class="navbar-link "><i class="fas fa-user-circle fa-lg m-r-5"></i>Profile</a>
                                 <div class="navbar-dropdown is-right">
-                                    <a class="navbar-item">Edit Profile</a>
-                                    <a class="navbar-item">Elements</a>
-                                    <a class="navbar-item">Components</a>
+                                    <a class="navbar-item"><i class="fas fa-tachometer-alt m-r-5 fa-lg"></i>Dashboard</a>
+                                    <a class="navbar-item"><i class="fas fa-user m-r-5 fa-lg "></i>Manage Profile</a>
                                     <hr class="navbar-divider">
                                     <form action="/logout" method="POST">
                                         <a class="navbar-item"><i class="fas fa-sign-out-alt fa-lg m-r-5" aria-hidden="true"></i>Log Out</a>

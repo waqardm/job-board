@@ -320,7 +320,8 @@ body {
   width: 100%;
   left: 0;
   bottom: 0;
-  background: #F46197; }
+  background: #F46197;
+  height: 50px; }
 
 .twitter {
   color: #00aced; }
