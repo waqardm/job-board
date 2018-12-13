@@ -307,9 +307,16 @@
   border-radius: 3px;
   box-shadow: 3px 3px 0px #bababa; }
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+.main-content {
+  flex: 1; }
+
 .footer {
   margin-top: 75px;
-  position: fixed;
   width: 100%;
   left: 0;
   bottom: 0;
