@@ -1,14 +1,20 @@
 {
-  "name": "job-board",
+  "name": "product-hunt",
   "version": "1.0.0",
-  "description": "Job board for newbies",
-  "main": "index.html",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "sass": "node-sass -w scss/ -o /dist/css --recursive"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass sass/main.scss public/css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
-  "author": "Waqar Mohammad",
-  "license": "UNLICENSED",
+  "author": "Irshad Ansari",
+  "license": "ISC",
   "dependencies": {
-    "node-sass": "^4.11.0"
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.2"
   }
 }

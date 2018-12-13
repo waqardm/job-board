@@ -1,0 +1,77 @@
+// Margin && Padding helpers
+
+$spaceamounts: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+  
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+
+
+
+///////////////////////////// Global /////////////////////////////
+
+
+//sidebar
+.sidebar {
+    background-color: #fafafa;
+    height: 100%;
+    display: block;
+    color: #000;
+    border-radius: 3px;
+    box-shadow: 3px 3px 0px #bababa;
+}
+
+.listing {
+    background-color: #fafafa;
+    display: block;
+    border-radius: 3px;
+    box-shadow: 3px 3px 0px #bababa;
+}
+
+
+//footer
+.footer {
+  margin-top: 75px;
+<<<<<<< HEAD
+  width: 100%;
+  bottom: 0px;
+  background: #F46197;
+}
+
+=======
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: #F46197;
+}
+
+///////////////////////////// Socials /////////////////////////////
+
+// Twitter
+.twitter {
+  color: #00aced;
+}
+
+// Discord
+.discord {
+  color: #7289da;
+}
+
+//Telegram
+.telegram {
+  color: #0088cc;
+}
+
+>>>>>>> waqar
+
