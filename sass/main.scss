@@ -42,9 +42,36 @@ $sides: (top, bottom, left, right); // Leave this variable alone
 //footer
 .footer {
   margin-top: 75px;
+<<<<<<< HEAD
   width: 100%;
   bottom: 0px;
   background: #F46197;
 }
 
+=======
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: #F46197;
+}
+
+///////////////////////////// Socials /////////////////////////////
+
+// Twitter
+.twitter {
+  color: #00aced;
+}
+
+// Discord
+.discord {
+  color: #7289da;
+}
+
+//Telegram
+.telegram {
+  color: #0088cc;
+}
+
+>>>>>>> waqar
 
