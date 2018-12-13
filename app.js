@@ -13,6 +13,11 @@ const initialMiddleware = require('./middlewares/initial');
 
 // Importing Routers
 const generalRouter = require('./routers/general');
+const hirerRouter = require('./routers/hirer');
+const candidateRouter = require('./routers/candidate');
+
+// Importing Models
+const Candidate = require('./models/candidate');
 
 // Initializing App
 const app = express();
@@ -28,6 +33,8 @@ app.use(initialMiddleware);
 
 // Setting routes
 app.use(generalRouter);
+app.use('/hirer', hirerRouter);
+app.use('/candidate',candidateRouter);
 
 
 // Error Pages

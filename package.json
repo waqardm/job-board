@@ -11,9 +11,14 @@
   "author": "Irshad Ansari",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-mysql-session": "^2.0.1",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.0",
     "mysql2": "^1.6.4",
     "node-sass": "^4.11.0",
     "sequelize": "^4.41.2"

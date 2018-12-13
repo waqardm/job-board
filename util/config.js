@@ -6,5 +6,8 @@ module.exports = {
         PASSWORD: 'password',
         PORT: 3306,
         HOST: 'localhost'
+    },
+    SESSION: {
+        SECRET: 'someSecret'
     }
 }
