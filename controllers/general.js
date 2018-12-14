@@ -38,3 +38,11 @@ module.exports.postLogout = (req, res, next) => {
       }
   });
 }
+
+// temp dashboard
+
+module.exports.dashboard = (req, res) => {
+  res.render('dashboard', {
+    pageTitle: 'Dashboard'
+  });
+}

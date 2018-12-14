@@ -30,9 +30,9 @@ body {
 
 //navbar
 .navbar {
-  padding: 20px;
-  background-color: #f9f9f9;
+  background: #f9f9f9;
 }
+
 //paragraph
 p {
   color: black;
@@ -50,15 +50,23 @@ h6 {
   font-family: 'Bree Serif', serif;
 }
 
+h1 {
+  border-bottom: 8px solid lightcoral;
+}
+
+.index-h1 {
+  width: 50%;
+}
+
 .button {
   box-shadow: 3px 3px 0px lightgrey;
 }
 
-
 //divider
-.navbar-divider {
-  background-color: #bababa;
-  width: 75%;
+.listing-divider {
+  background-color: lightcoral;
+  height: 3px;
+  width: 50%;
 }
 
 //listing
@@ -67,7 +75,7 @@ h6 {
     display: block;
     border-radius: 3px;
     box-shadow: 3px 3px 0px #005b96;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px;
 }
 
@@ -81,12 +89,12 @@ h6 {
 }
 
 .form-bg {
-  background-color: #fafafa;
+  background-color: #fff;
   display: block;
   height: 75%;
   padding: 30px;
   border-radius: 3px;
-  box-shadow: 3px 3px 0px #bababa;
+  box-shadow: 3px 3px 0px lightcoral;
 }
 
 
