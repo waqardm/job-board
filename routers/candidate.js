@@ -8,8 +8,12 @@ router.get('/register', candidateController.getRegister);
 
 router.get('/login', candidateController.getLogin);
 
+router.get('/dashboard', candidateController.getDashboard);
+
 router.post('/register', validator.registerValidator, candidateController.postRegister);
 
 router.post('/login', validator.loginValidator, candidateController.postLogin);
+
+
 
 module.exports = router;

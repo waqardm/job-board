@@ -16,6 +16,13 @@ module.exports.getRegister = (req, res) => {
     })
 }
 
+//Renders Candidate Dashboard
+module.exports.getDashboard = (req, res) => {
+    res.render('/dashboard', {
+        pageTitle: 'Candidate Dashboard | Job Board'
+    })
+}
+
 // Handles Candidate Registration
 module.exports.postRegister = (req, res, next) => {
     
