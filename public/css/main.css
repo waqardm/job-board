@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif|Comfortaa");
 .m-t-5 {
   margin-top: 5px !important; }
 
@@ -286,18 +287,49 @@
 .p-r-100 {
   padding-right: 100px !important; }
 
+body {
+  font-family: 'Comfortaa', cursive;
+  background-color: #f9f9f9; }
+
+.navbar {
+  padding: 20px;
+  background-color: #f9f9f9; }
+
+p {
+  color: black;
+  font-family: 'Comfortaa', cursive;
+  font-size: 18px; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+  font-family: 'Bree Serif', serif; }
+
+.button {
+  box-shadow: 3px 3px 0px lightgrey; }
+
+.navbar-divider {
+  background-color: #bababa;
+  width: 75%; }
+
+.listing {
+  background-color: #fff;
+  display: block;
+  border-radius: 3px;
+  box-shadow: 3px 3px 0px #005b96;
+  margin-top: 10px;
+  padding: 10px; }
+
 .sidebar {
-  background-color: #fafafa;
+  background-color: #fff;
   height: 100%;
   display: block;
   border-radius: 3px;
-  box-shadow: 3px 3px 0px #bababa; }
-
-.listing {
-  background-color: #fafafa;
-  display: block;
-  border-radius: 3px;
-  box-shadow: 3px 3px 0px #bababa; }
+  box-shadow: 3px 3px 0px lightcoral; }
 
 .form-bg {
   background-color: #fafafa;

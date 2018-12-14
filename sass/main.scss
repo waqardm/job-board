@@ -16,24 +16,68 @@ $sides: (top, bottom, left, right); // Leave this variable alone
 }
 
 
+///////////////////////////// Fonts /////////////////////////////
 
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Comfortaa');
 
 ///////////////////////////// Global /////////////////////////////
 
+
+body {
+  font-family: 'Comfortaa', cursive;
+  background-color: #f9f9f9;
+}
+
+//navbar
+.navbar {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+//paragraph
+p {
+  color: black;
+  font-family: 'Comfortaa', cursive;
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+  font-family: 'Bree Serif', serif;
+}
+
+.button {
+  box-shadow: 3px 3px 0px lightgrey;
+}
+
+
+//divider
+.navbar-divider {
+  background-color: #bababa;
+  width: 75%;
+}
+
+//listing
+.listing {
+    background-color: #fff;
+    display: block;
+    border-radius: 3px;
+    box-shadow: 3px 3px 0px #005b96;
+    margin-top: 10px;
+    padding: 10px;
+}
+
 //sidebar
 .sidebar {
-    background-color: #fafafa;
+    background-color: #fff;
     height: 100%;
     display: block;
     border-radius: 3px;
-    box-shadow: 3px 3px 0px #bababa;
-}
-
-.listing {
-    background-color: #fafafa;
-    display: block;
-    border-radius: 3px;
-    box-shadow: 3px 3px 0px #bababa;
+    box-shadow: 3px 3px 0px lightcoral;
 }
 
 .form-bg {
