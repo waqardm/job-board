@@ -4,38 +4,24 @@
         <div class="columns is-mobile">
             <div class="column is-three-quarters p-l-75 p-r-20">
                 <div>
-                    <h1 class="title is-1 index-h1">👋 $name</h1>
+                    <h1 class="title is-1 index-h1">👋 $company name</h1>
                     <p class="subtitle is-4 m-t-50">
-                            🗄 Track your saved and applied jobs below.
+                        💼 Keep track of your listed jobs and applications.
                     </p>
                 </div> <!-- intro-->
 
                 <div class="m-t-50"></div>
 
-                <div class="field is-horizontal listing">
-                    <div class="field-label is-medium">
-                        <label class="label">Search</label>
-                    </div>
-                    <div class="field-body">
-                        <div class="field">
-                        <div class="control">
-                            <input class="input is-medium is-three-quarters" type="text" placeholder="Search results by location, role, or stack">
-                        </div>
-                        </div>
-                    </div>
-                </div>
-
-
                 <div class="tabs is-toggle is-centered m-t-30">
                     <ul>
                         <li class="is-active">
                             <a>
-                                <span>❤️ Saved</span>
+                                <span>❤️ Applications</span>
                             </a>
                         </li>
                         <li>
                             <a>
-                                <span>📝 Applied</span>
+                                <span>📝 Jobs Listed</span>
                             </a>
                         </li>
                     </ul>
@@ -43,23 +29,22 @@
 
                 <div class="listing">
                     <article class="media p-t-10 p-l-10">
-                        <figure class="media-left">
-                            <p class="image is-75x75">
-                                <img src="https://bulma.io/images/placeholders/128x128.png">
-                            </p>
-                        </figure>
                         <div class="media-content">
                             <div class="content">
                                 <p class="is-size-5">
-                                    <strong class="is-size-4"> 💼 Company Name</strong><span class="m-l-20 m-r-10 is-size-4">🗺</span>Location<br>
-                                    <span class="is-size-4">👩‍💻👨‍💻</span> Javascript Developer<br>
+                                    <strong class="is-size-4"><span class="is-size-4">👩‍💻👨‍💻</span> Candidate Name</strong>
+                                    <br>
+                                    <strong>Job Applied For: </strong>
+                                    Javascript Developer
+                                    <span class="m-l-10 is-size-4">🗺</span>Location
+                                    <span class="m-l-10 is-size-4">💵</span> $30,000
                                 </p>
                             </div>
-                            <p class="is-pulled-left button is-text">Details</p>
+                            
                             <nav class="level is-mobile is-pulled-right">
                                 <div class="level-left">
-                                    <a class="level-item button is-danger"><i class="fas fa-heart m-r-5"></i>Save</a>
-                                    <a class="level-item button is-success"><i class="fas fa-pen m-r-5"></i>Apply</a>
+                                    <p class="is-pulled-left button is-text m-r-10">Details</p>
+                                    <a class="level-item button is-link"><i class="fas fa-eye m-r-5"></i>View Profile</a>
                                     <a class="level-item">
                                         <span class="icon is-small"></i></span>
                                     </a>
@@ -67,27 +52,24 @@
                             </nav>
                         </div>
                     </article>
-                </div><!-- job listing-->
+                </div><!-- application received-->
 
                 <div class="listing">
                     <article class="media p-t-10 p-l-10">
-                        <figure class="media-left">
-                            <p class="image is-75x75">
-                                <img src="https://bulma.io/images/placeholders/128x128.png">
-                            </p>
-                        </figure>
                         <div class="media-content">
                             <div class="content">
                                 <p class="is-size-5">
-                                    <strong class="is-size-4"> 💼 Company Name</strong><span class="m-l-20 m-r-10 is-size-4">🗺</span>Location<br>
-                                    <span class="is-size-4">👩‍💻👨‍💻</span> Javascript Developer<br>
+                                    <span class="is-size-4">👩‍💻👨‍💻</span>
+                                    <strong>Javascript Developer</strong>
+                                    <span class="m-l-10 is-size-4">🗺</span>Location
+                                    <span class="m-l-10 is-size-4">💵</span> $30,000
                                 </p>
                             </div>
-                            <p class="is-pulled-left button is-text">Details</p>
+                            
                             <nav class="level is-mobile is-pulled-right">
                                 <div class="level-left">
-                                    <a class="level-item button is-danger"><i class="fas fa-heart m-r-5"></i>Save</a>
-                                    <a class="level-item button is-success"><i class="fas fa-pen m-r-5"></i>Apply</a>
+                                    <p class="is-pulled-left button is-text m-r-10">Details</p>
+                                    <a class="level-item button is-link"><i class="fas fa-edit m-r-5"></i>Edit</a>
                                     <a class="level-item">
                                         <span class="icon is-small"></i></span>
                                     </a>
@@ -100,46 +82,31 @@
             </div> <!-- first column-->
 
             <div class="column sidebar m-r-50">
-                <h3 class="title is-3">Spotlight</h1>
-               <div class="card m-t-10">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <p class="title is-5">💼 Company Name</p>
-                                <p class="subtitle is-6">🗺 Location</p>
-                            </div>
-                        </div>
+                <a class="button is-large is-fullwidth is-success m-t-20 m-b-20"><i class="fas fa-plus-circle m-r-10"></i>Add New Job</a>
 
-                        <div class="content">
-                            <p>👩‍💻👨‍💻 Javascript Developer.</p>
-                        </div>
-                    </div>
-                </div><!-- company 1 -->
+                <h3 class="title is-3">New Candidates</h1>
 
                 <div class="card m-t-10">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                        </figure>
-                    </div>
                     <div class="card-content">
                         <div class="media">
                             <div class="media-content">
-                                <p class="title is-5">💼 Company Name</p>
-                                <p class="subtitle is-6">🗺 Location</p>
+                                <p class="title is-5">👨‍💻 Joe Bloggs</p>
+                                <p>some intro text</p>
                             </div>
                         </div>
+                    </div>
+                </div><!-- candidate 1 -->
 
-                        <div class="content">
-                            <p>👩‍💻👨‍💻 Javascript Developer.</p>
+                <div class="card m-t-10">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-5">👩‍💻 Jenny Bloggs</p>
+                                <p>some intro text</p>
+                            </div>
                         </div>
                     </div>
-                </div><!-- company 2 -->
+                </div><!-- candidate 2 -->
 
                 <h3 class="title is-3 m-t-30">Sponsored</h1>
                 <p>
