@@ -294,6 +294,12 @@ body {
 .navbar {
   background: #f9f9f9; }
 
+.profile-menu {
+  font-size: 20px; }
+
+.profile-dropdown {
+  font-size: 18px; }
+
 p {
   color: black;
   font-family: 'Comfortaa', cursive;
