@@ -30,6 +30,18 @@
 
             <div class="field columns">
                 <div class="column">
+                    <label class="label">Company Name</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" placeholder="Company Name" name="companyName" value="<%= locals.userInput ? userInput.companyName : ''%>">
+                        <span class="icon is-small is-left">
+                        <i class="fas fa-building"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field columns">
+                <div class="column">
                     <label class="label">Email</label>
                     <div class="control has-icons-left">
                         <input class="input" type="email" placeholder="Email" name="email" value="<%= locals.userInput ? userInput.email : ''%>">
