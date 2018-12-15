@@ -72,14 +72,14 @@ module.exports.getProfile = (req, res,next) => {
 //Renders Edit Profile
 module.exports.getEditProfile = (req, res) => {
   if(req.session.isHirer) {
-    res.render('hirer/edit', {
+    res.render('hirer/editProfile', {
       pageTitle: 'Edit Profile | Job Board'
     });
   } else if(req.session.isCandidate){
-    res.render('candidate/edit', {
+    res.render('candidate/editProfile', {
       pageTitle: 'Edit Profile | Job Board'
     });
   } else {
-    next(new Error('Unauthorised'));
+    next(new Error('Unauthorized'));
   }
 }

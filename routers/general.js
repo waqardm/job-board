@@ -11,6 +11,6 @@ router.get('/contact', generalController.getContact);
 router.post('/logout', generalController.postLogout);
 router.get('/dashboard', authenticator(), generalController.getDashboard);
 router.get('/profile', authenticator(), generalController.getProfile);
-router.get('/edit', authenticator(), generalController.getEditProfile);
+router.get('/profile/edit', authenticator(), generalController.getEditProfile);
 
 module.exports = router;

@@ -15,6 +15,13 @@ module.exports.getLogin = (req, res) => {
     });
 }
 
+//Renders Add Job Page
+module.exports.getAddJob = (req, res) => {
+    res.render('hirer/addJob', {
+        pageTitle: 'Add Job | Job Board'
+    });
+}
+
 
 // Handles Hirer Registration
 module.exports.postRegister = (req, res, next) => {
