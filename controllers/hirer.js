@@ -15,20 +15,6 @@ module.exports.getLogin = (req, res) => {
     });
 }
 
-//Renders Hirer Dashboard
-module.exports.getDashboard = (req, res) => {
-    res.render('hirer/dashboard', {
-        pageTitle: 'Hirer Dashboard | Job Board'
-    });
-}
-
-//Renders Hirer Profile
-module.exports.getProfile = (req, res) => {
-    res.render('hirer/profile', {
-        pageTitle: 'Hirer Profile | Job Board'
-    });
-}
-
 // Handles Hirer Registration
 module.exports.postRegister = (req, res, next) => {
     
@@ -132,7 +118,7 @@ module.exports.postLogin = (req, res, next) => {
                 hirer.checkPassword(req.body.password)
                     .then((isMatch) => {
                         if(isMatch) {
-                            hirer.isHirer = true;
+                            req.session.isHirer = true;
                             req.session.user = hirer;
                             req.session.save(error => {
                                 if(error) {

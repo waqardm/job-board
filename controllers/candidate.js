@@ -16,19 +16,6 @@ module.exports.getRegister = (req, res) => {
     });
 }
 
-//Renders Candidate Dashboard
-module.exports.getDashboard = (req, res) => {
-    res.render('candidate/dashboard', {
-        pageTitle: 'Candidate Dashboard | Job Board'
-    });
-}
-
-//Renders Candidate Profile
-module.exports.getProfile = (req, res) => {
-    res.render('candidate/profile', {
-        pageTitle: 'Candidate Profile | Job Board'
-    });
-}
 
 // Handles Candidate Registration
 module.exports.postRegister = (req, res, next) => {
@@ -133,7 +120,7 @@ module.exports.postLogin = (req, res, next) => {
                 candidate.checkPassword(req.body.password)
                     .then((isMatch) => {
                         if(isMatch) {
-                            candidate.isCandidate = true;
+                            req.session.isCandidate = true;
                             req.session.user = candidate;
                             req.session.save(error => {
                                 if(error) {
