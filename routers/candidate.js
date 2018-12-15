@@ -10,6 +10,8 @@ router.get('/login', candidateController.getLogin);
 
 router.get('/dashboard', candidateController.getDashboard);
 
+router.get('/profile', candidateController.getProfile);
+
 router.post('/register', validator.registerValidator, candidateController.postRegister);
 
 router.post('/login', validator.loginValidator, candidateController.postLogin);

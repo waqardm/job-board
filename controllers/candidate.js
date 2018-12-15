@@ -13,14 +13,21 @@ module.exports.getLogin = (req, res) => {
 module.exports.getRegister = (req, res) => {
     res.render('candidate/register', {
         pageTitle: 'Candidate Register | Job Board'
-    })
+    });
 }
 
 //Renders Candidate Dashboard
 module.exports.getDashboard = (req, res) => {
-    res.render('/dashboard', {
+    res.render('candidate/dashboard', {
         pageTitle: 'Candidate Dashboard | Job Board'
-    })
+    });
+}
+
+//Renders Candidate Profile
+module.exports.getProfile = (req, res) => {
+    res.render('candidate/profile', {
+        pageTitle: 'Candidate Profile | Job Board'
+    });
 }
 
 // Handles Candidate Registration
@@ -96,7 +103,7 @@ module.exports.postRegister = (req, res, next) => {
         }); 
 }
 
-// Handels Candidate Login
+// Handles Candidate Login
 module.exports.postLogin = (req, res, next) => {
     
     // Extracting Validation Errors from Express Validator
