@@ -298,7 +298,7 @@ body {
   font-size: 20px; }
 
 .profile-dropdown {
-  font-size: 18px; }
+  font-size: 16px; }
 
 p {
   color: black;
@@ -317,11 +317,11 @@ h6 {
 h1 {
   border-bottom: 8px solid lightcoral; }
 
-.profile-h1 {
-  border-bottom: none; }
-
 .index-h1 {
   width: 50%; }
+
+.profile-h1 {
+  border-bottom: none; }
 
 .button {
   box-shadow: 3px 3px 0px lightgrey; }

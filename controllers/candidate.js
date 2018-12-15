@@ -16,7 +16,6 @@ module.exports.getRegister = (req, res) => {
     });
 }
 
-
 // Handles Candidate Registration
 module.exports.postRegister = (req, res, next) => {
     

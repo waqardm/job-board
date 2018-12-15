@@ -15,6 +15,7 @@ module.exports.getLogin = (req, res) => {
     });
 }
 
+
 // Handles Hirer Registration
 module.exports.postRegister = (req, res, next) => {
     

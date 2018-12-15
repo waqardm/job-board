@@ -4,8 +4,8 @@
     <div class="column is-three-fifths form-bg">
 
         <div class="columns">    
-            <div class="column">
-                <h1 class="title is-1 profile-h1"> Joe Bloggs </h1>
+            <div class="column is-two-thirds">
+                <h1 class="title is-1 profile-h1"> <%=user.firstName +' ' + user.lastName %></h1>
             </div>
             <div class="column">
                 <a class="button is-mediums is-link is-pulled-right"><i class="fas fa-edit m-r-10"></i>Edit Profile</a>
@@ -17,11 +17,10 @@
                 <div class="tile">
                 <div class="tile is-parent is-vertical">
                     <article class="tile is-child notification is-primary">
-                    <p class="title is-size-4">👨‍💻 Personal Details</p>
+                    <p class="title is-size-4">🏢 Company Details</p>
                     <p class="subtitle">
-                        <strong>Email Address:</strong> joe@bloggs.com
+                        <strong>Email Address:</strong> <%= user.email %>
                         <strong>Password:</strong> Hidden
-                        <strong>Resume: </strong> Joe Bloggs Resume
                     </p>
                     <div class="file is-pulled-right">
                         <label class="file-label">
@@ -38,18 +37,12 @@
                     </div>
                     
                     </article>
-                    <article class="tile is-child notification is-warning">
-                        <p class="title">Short Intro</p>
-                        <p class="subtitle">
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
-                        </p>
-                    </article>
                 </div>
                 
                 </div>
                 <div class="tile is-parent">
                 <article class="tile is-child notification is-danger">
-                    <p class="title">Long Intro</p>
+                    <p class="title">About the Company</p>
                     <div class="content">
                     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English...
                     </div>
@@ -62,6 +55,8 @@
                     <p class="title">Profiles</p>
                     <p class=" m-b-5"><a href="#"><strong><i class="fab fa-github m-r-5"></i>Github</strong></a></p>
                     <p class=" m-b-5 m-t-10"><a href="#"><strong><i class="fab fa-stack-overflow m-r-5"></i>Stack Overflow</strong></a></p>
+                    <p class=" m-b-5 m-t-10"><a href="#"><strong><i class="fab fa-youtube m-r-5"></i>Youtube</strong></a></p>
+                    <p class=" m-b-5 m-t-10"><a href="#"><strong>Glassdoor</strong></a></p>
                     <p class=" m-b-5 m-t-10"><a href="#"><strong><i class="fab fa-dribbble m-r-5"></i>Dribbble</strong></a></p>
                     <p class="m-b-5 m-t-10"><a href="#"><strong><i class="fab fa-twitter m-r-5"></i>Twitter</strong></a></p>
                     <div class="content">
