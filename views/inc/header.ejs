@@ -26,23 +26,20 @@
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
                     <a href="/about" class="navbar-item">🛎 About</a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">📌 More</a>
-                        <div class="navbar-dropdown">
-                            <a href="/community" class="navbar-item">💬 Community</a>
-                            <a href="/contact" class="navbar-item">📨 Contact</a>
-                        </div>
-                    </div>
-                    <% if(!locals.user) { %>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">✍️ Register</a>
-                        <div class="navbar-dropdown">
-                            <a href="/candidate/register" class="navbar-item"> 👩‍🏫 Candidate</a>
-                            <a href="/hirer/register" class="navbar-item">😎 Hirer</a>
-                        </div>
-                    </div>
-                    <% } %>
+                    <a href="/community" class="navbar-item">💬 Community</a>
+                    <a href="/contact" class="navbar-item">📨 Contact</a>
                 </div>
+                
+                <% if(!locals.user) { %>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">✍️ Register</a>
+                    <div class="navbar-dropdown">
+                        <a href="/candidate/register" class="navbar-item"> 👩‍🏫 Candidate</a>
+                        <a href="/hirer/register" class="navbar-item">😎 Hirer</a>
+                    </div>
+                </div>
+                <% } %>
+            </div>
                 
 
                 <% if(!locals.user) { %>
