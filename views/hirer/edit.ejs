@@ -1,0 +1,115 @@
+<%- include('../inc/header') %>
+
+<div class="columns is-mobile is-centered">
+    <div class="column is-three-fifths form-bg">
+
+        <div class="column is-two-thirds">
+            <h1 class="title is-1 m-b-10"> <%= user.firstName + ' ' + user.lastName %> </h1>
+            <p class="title is-4">🏢 Company Name</p>
+        </div>
+
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left">
+                <input class="input" type="email" value=<%=user.email %>>
+                <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Password</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input" type="password" placeholder="Enter new password">
+                <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Confirm Password</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input" type="password" placeholder="Confirm new password">
+                <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+                </span>
+            </div>
+        </div>
+        
+        <div class="field">
+            <label class="label">Github</label>
+            <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="Add your company Github profile url">
+            <span class="icon is-small is-left">
+            <i class="fab fa-github"></i>
+            </span>
+        </div>
+
+        <div class="field m-t-10">
+            <label class="label">Stack Overflow</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="Add your company Stack Overflow profile url">
+                <span class="icon is-small is-left">
+                <i class="fab fa-stack-overflow"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field m-t-10">
+            <label class="label">Youtube</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="Add your company Youtube profile url">
+                <span class="icon is-small is-left">
+                <i class="fab fa-youtube"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field m-t-10">
+            <label class="label">Glassdoor</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="Add your company Glassdoor profile url">
+                <span class="icon is-small is-left">
+                <i class="fas fa-door-open"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field m-t-10">
+            <label class="label">Dribbble</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="Add your company Dribbble profile url">
+                <span class="icon is-small is-left">
+                <i class="fab fa-dribbble"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field m-t-10">
+            <label class="label">Twitter</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="Add your Twitter profile url">
+                <span class="icon is-small is-left">
+                <i class="fab fa-twitter"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">About Your Company</label>
+            <div class="control">
+                <textarea class="textarea" placeholder="Please give as much info about your company as possible such as perks, environment, and work ethos 🏄‍"></textarea>
+            </div>
+        </div>
+
+         <div class="columns">    
+            <div class="column">
+                <a class="button is-success is-pulled-right m-t-10"><i class="fas fa-save m-r-10"></i>Save Changes</a>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+<%- include('../inc/footer') %>

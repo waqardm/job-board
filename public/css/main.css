@@ -326,6 +326,10 @@ h1 {
 .button {
   box-shadow: 3px 3px 0px lightgrey; }
 
+.fa-file {
+  color: lightblue;
+  font-size: 28px; }
+
 .listing-divider {
   background-color: lightcoral;
   height: 3px;

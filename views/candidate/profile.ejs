@@ -4,11 +4,11 @@
     <div class="column is-three-fifths form-bg">
 
         <div class="columns">    
-            <div class="column">
-                <h1 class="title is-1 profile-h1"> Joe Bloggs </h1>
+            <div class="column is-two-thirds">
+                <h1 class="title is-1 profile-h1"> <%= user.firstName + ' ' + user.lastName %> </h1>
             </div>
             <div class="column">
-                <a class="button is-mediums is-link is-pulled-right"><i class="fas fa-edit m-r-10"></i>Edit Profile</a>
+                <a class="button is-link is-pulled-right"><i class="fas fa-edit m-r-10"></i>Edit Profile</a>
             </div>
         </div>
 
@@ -19,7 +19,7 @@
                     <article class="tile is-child notification is-primary">
                     <p class="title is-size-4">👨‍💻 Personal Details</p>
                     <p class="subtitle">
-                        <strong>Email Address:</strong> joe@bloggs.com
+                        <strong>Email Address:</strong> <%= user.email %>
                         <strong>Password:</strong> Hidden
                         <strong>Resume: </strong> Joe Bloggs Resume
                     </p>

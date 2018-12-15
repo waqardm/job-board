@@ -50,7 +50,7 @@ module.exports.getDashboard = (req, res, next) => {
       pageTitle: 'Candidate Dashboard | Job Board'
     });
   } else {
-    next(new Error('UnAuthorized'));
+    next(new Error('Unauthorized'));
   }
 }
 
@@ -65,6 +65,21 @@ module.exports.getProfile = (req, res,next) => {
       pageTitle: 'Candidate Profile | Job Board'
     });
   } else {
-    next(new Error('UnAuthorized'));
+    next(new Error('Unauthorized'));
+  }
+}
+
+//Renders Edit Profile
+module.exports.getEditProfile = (req, res) => {
+  if(req.session.isHirer) {
+    res.render('hirer/edit', {
+      pageTitle: 'Edit Profile | Job Board'
+    });
+  } else if(req.session.isCandidate){
+    res.render('candidate/edit', {
+      pageTitle: 'Edit Profile | Job Board'
+    });
+  } else {
+    next(new Error('Unauthorised'));
   }
 }
