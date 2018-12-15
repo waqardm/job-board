@@ -22,6 +22,13 @@ module.exports.getAddJob = (req, res) => {
     });
 }
 
+//Renders Edit Job Page
+module.exports.getEditJob = (req, res) => {
+    res.render('hirer/editJob', {
+        pageTitle: 'Edit Job | Job Board'
+    });
+}
+
 
 // Handles Hirer Registration
 module.exports.postRegister = (req, res, next) => {
