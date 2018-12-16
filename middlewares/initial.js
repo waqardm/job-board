@@ -36,6 +36,7 @@ module.exports = [
     (req, res, next) => {
         req.user = req.session.user;
         res.locals.user = req.session.user;
+        res.locals.userType = req.session.userType;
         res.locals.errors = req.flash('errors');
         res.locals.success = req.flash('success');
         if(res.locals.errors.length > 0) {

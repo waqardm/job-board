@@ -41,11 +41,11 @@ module.exports.postLogout = (req, res, next) => {
 
 // Renders Dashboard
 module.exports.getDashboard = (req, res, next) => {
-  if(req.session.isHirer) {
+  if(req.session.userType === 'hirer') {
     res.render('hirer/dashboard', {
       pageTitle: 'Hirer Dashboard | Job Board'
     });
-  } else if(req.session.isCandidate) {
+  } else if(req.session.userType === 'candidate') {
     res.render('candidate/dashboard', {
       pageTitle: 'Candidate Dashboard | Job Board'
     });
@@ -56,11 +56,11 @@ module.exports.getDashboard = (req, res, next) => {
 
 // Renders User Profile
 module.exports.getProfile = (req, res,next) => {
-  if(req.session.isHirer) {
+  if(req.session.userType === 'hirer') {
     res.render('hirer/profile', {
       pageTitle: 'Hirer Profile | Job Board'
     });
-  } else if(req.session.isCandidate) {
+  } else if(req.session.userType === 'candidate') {
     res.render('candidate/profile', {
       pageTitle: 'Candidate Profile | Job Board'
     });
@@ -71,11 +71,11 @@ module.exports.getProfile = (req, res,next) => {
 
 //Renders Edit Profile
 module.exports.getEditProfile = (req, res) => {
-  if(req.session.isHirer) {
+  if(req.session.userType === 'hirer') {
     res.render('hirer/editProfile', {
       pageTitle: 'Edit Profile | Job Board'
     });
-  } else if(req.session.isCandidate){
+  } else if(req.session.userType === 'candidate'){
     res.render('candidate/editProfile', {
       pageTitle: 'Edit Profile | Job Board'
     });

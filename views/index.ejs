@@ -105,10 +105,12 @@
 
                 </div> <!-- first column-->
 
-                <% if(locals.user === 'hirer') { %>
+                <% if(locals.userType == 'hirer') { %>
                     <%- include('inc/hirer-sidebar') %>
-                <% } else { %>
+                <% } else if(locals.userType == 'candidate') { %>
                     <%- include('inc/candidate-sidebar') %>
+                <% } else {%>
+                    <%- include('inc/default-sidebar') %>
                 <% } %>
             
             </div> <!--main columns-->

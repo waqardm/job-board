@@ -119,7 +119,7 @@ module.exports.postLogin = (req, res, next) => {
                 candidate.checkPassword(req.body.password)
                     .then((isMatch) => {
                         if(isMatch) {
-                            req.session.isCandidate = true;
+                            req.session.userType = 'candidate';
                             req.session.user = candidate;
                             req.session.save(error => {
                                 if(error) {
