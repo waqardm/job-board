@@ -28,79 +28,26 @@
 
                 <div class="tabs is-toggle is-centered m-t-30">
                     <ul>
-                        <li class="is-active">
+                        <li class="is-active" id="saved-tab">
                             <a>
                                 <span>❤️ Saved</span>
                             </a>
                         </li>
-                        <li>
-                            <a>
+                        <li id="applied-tab">
+                            <a >
                                 <span>📝 Applied</span>
                             </a>
                         </li>
                     </ul>
                 </div>
 
-                <div class="listing">
-                    <article class="media p-t-10 p-l-10">
-                        <figure class="media-left">
-                            <p class="image is-75x75">
-                                <img src="https://bulma.io/images/placeholders/128x128.png">
-                            </p>
-                        </figure>
-                        <div class="media-content">
-                            <div class="content">
-                                <strong class="is-size-4"> 💼 Company Name</strong>
-                                    <span class="m-l-10 is-size-4">🗺</span>Location
-                                    <span class="m-l-10 is-size-4">💵</span> $30,000
-                                    <br>
-                                    <span class="is-size-4">👩‍💻👨‍💻</span> Javascript Developer<br>
-                            </div>
-                            <p class="is-pulled-left button is-text">Details</p>
-                            <nav class="level is-mobile is-pulled-right">
-                                <div class="level-left">
-                                    <a class="level-item button is-danger"><i class="fas fa-heart m-r-5"></i>Save</a>
-                                    <a class="level-item button"><i class="fas fa-pen m-r-5"></i>Applied</a>
-                                    <a class="level-item">
-                                        <span class="icon is-small"></i></span>
-                                    </a>
-                                </div>
-                            </nav>
-                        </div>
-                    </article>
-                </div><!-- job listing-->
+                <div id="saved">
+                    <%- include('../inc/candidate/saved') %>
+                </div>
+                <div id="applied">
+                    <%- include('../inc/candidate/applied') %>
+                </div>
 
-                <div class="listing">
-                    <article class="media p-t-10 p-l-10">
-                        <figure class="media-left">
-                            <p class="image is-75x75">
-                                <img src="https://bulma.io/images/placeholders/128x128.png">
-                            </p>
-                        </figure>
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="is-size-5">
-                                    <strong class="is-size-4"> 💼 Company Name</strong>
-                                    <span class="m-l-10 is-size-4">🗺</span>Location
-                                    <span class="m-l-10 is-size-4">💵</span> $30,000
-                                    <br>
-                                    <span class="is-size-4">👩‍💻👨‍💻</span> Javascript Developer<br>
-                                </p>
-                            </div>
-                            <p class="is-pulled-left button is-text">Details</p>
-                            <nav class="level is-mobile is-pulled-right">
-                                <div class="level-left">
-                                    <a class="level-item button is-danger"><i class="fas fa-heart m-r-5"></i>Saved</a>
-                                    <a class="level-item button is-success"><i class="fas fa-pen m-r-5"></i>Apply</a>
-                                    <a class="level-item">
-                                        <span class="icon is-small"></i></span>
-                                    </a>
-                                </div>
-                            </nav>
-                        </div>
-                    </article>
-                </div><!-- job listing-->
-                
             </div> <!-- first column-->
 
             <%- include('../inc/candidate-sidebar') %>
