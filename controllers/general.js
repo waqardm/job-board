@@ -1,31 +1,32 @@
 const Hirer = require('../models/hirer');
 const Candidate = require('../models/candidate');
+const companyName = "Nubee.Tech";
 
 // Renders Index Page
 module.exports.getIndex = (req, res) => {
   res.render("index", {
-    pageTitle: 'Get Your First Job in Tech | Job Board'
+    pageTitle: 'Get Your First Job in Tech | ' + companyName + ' - Helping newbies find great places to work 🎉'
   });
 }
 
 // Renders About Page
 module.exports.getAbout = (req, res) => {
   res.render("about", {
-    pageTitle: "About Us | Job Board"
+    pageTitle: 'About Us | ' + companyName + ' - Helping newbies find great places to work 🎉'
   });
 };
 
 //Renders Community Page
 module.exports.getCommunity = (req, res) => {
   res.render('community', {
-    pageTitle: "Community | Job Board"
+    pageTitle: 'Community | ' + companyName + ' - Helping newbies find great places to work 🎉'
   });
 }
 
 // Renders Contact Page
 module.exports.getContact = (req, res) => {
   res.render("contact", {
-    pageTitle: 'Contact Us | Job Board'
+    pageTitle: 'Contact Us | ' + companyName + ' - Helping newbies find great places to work 🎉'
   });
 }
 
@@ -45,11 +46,11 @@ module.exports.postLogout = (req, res, next) => {
 module.exports.getDashboard = (req, res, next) => {
   if(req.session.userType === 'hirer') {
     res.render('hirer/dashboard', {
-      pageTitle: 'Hirer Dashboard | Job Board'
+      pageTitle: 'Hirer Dashboard | ' + companyName + ' - Helping newbies find great places to work 🎉'
     });
   } else if(req.session.userType === 'candidate') {
     res.render('candidate/dashboard', {
-      pageTitle: 'Candidate Dashboard | Job Board'
+      pageTitle: 'Candidate Dashboard | ' + companyName + ' - Helping newbies find great places to work 🎉'
     });
   } else {
     next(new Error('Unauthorized'));
@@ -60,11 +61,11 @@ module.exports.getDashboard = (req, res, next) => {
 module.exports.getProfile = (req, res,next) => {
   if(req.session.userType === 'hirer') {
     res.render('hirer/profile', {
-      pageTitle: 'Hirer Profile | Job Board'
+      pageTitle: 'Hirer Profile | ' + companyName + ' - Helping newbies find great places to work 🎉'
     });
   } else if(req.session.userType === 'candidate') {
     res.render('candidate/profile', {
-      pageTitle: 'Candidate Profile | Job Board'
+      pageTitle: 'Candidate Profile | ' + companyName + ' - Helping newbies find great places to work 🎉'
     });
   } else {
     next(new Error('Unauthorized'));
@@ -86,7 +87,7 @@ module.exports.getEditProfile = (req, res) => {
   User.findByPk(req.user.id)
     .then(user => {
       res.render(req.session.userType + '/editProfile', {
-        pageTitle: 'Edit Profile | Job Board',
+        pageTitle: 'Edit Profile | ' + companyName + ' - Helping newbies find great places to work 🎉',
         userInput : user
       });
     })
