@@ -27,7 +27,8 @@ const Hirer = sequelize.define('hirer', {
     }
 });
 
-Hirer.beforeValidate(encryptPass);
+Hirer.beforeCreate(encryptPass);
+Hirer.beforeUpdate(encryptPass);
 
 Hirer.prototype.checkPassword = checkPassword;
 

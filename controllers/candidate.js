@@ -162,3 +162,45 @@ module.exports.postLogin = (req, res, next) => {
             next(error);
         });
 }
+
+
+// Handles Post Edit Profile
+module.exports.postEditProfile = (req, res, next) => {
+
+    let isSaved = true;
+
+    // Find Logged in candidate
+    Candidate.findByPk(req.user.id)
+        .then(candidate => {
+            const newData = {
+                email : req.body.email,
+                github : req.body.github,
+                stackOverflow : req.body.stackOverflow,
+                dribbble : req.body.dribbble,
+                twitter : req.body.twitter,
+                shortIntro : req.body.shortIntro,
+                longIntro : req.body.longIntro
+            }
+
+            if(req.body.password || req.body.confirmPassword) {
+                if(req.body.password === req.body.confirmPassword && req.body.password.length >= 5) {
+                    newData.password = req.body.password;
+                } else {
+                    isSaved = false;
+                    req.flash('errors', ['Password do not match']);
+                    return res.redirect('/profile/edit');
+                }
+            }
+
+            return candidate.update(newData);
+        })
+        .then(() => {
+            if(isSaved) {
+                req.flash('success', ['Profile Edited Successfully']);
+                res.redirect('/profile');
+            }
+        })
+        .catch(error => {
+            next(error);
+        });
+}

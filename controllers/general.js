@@ -1,3 +1,5 @@
+const Hirer = require('../models/hirer');
+const Candidate = require('../models/candidate');
 
 // Renders Index Page
 module.exports.getIndex = (req, res) => {
@@ -71,15 +73,24 @@ module.exports.getProfile = (req, res,next) => {
 
 //Renders Edit Profile
 module.exports.getEditProfile = (req, res) => {
+  let User;
+
   if(req.session.userType === 'hirer') {
-    res.render('hirer/editProfile', {
-      pageTitle: 'Edit Profile | Job Board'
-    });
+    User = Hirer;
   } else if(req.session.userType === 'candidate'){
-    res.render('candidate/editProfile', {
-      pageTitle: 'Edit Profile | Job Board'
-    });
+    User = Candidate;
   } else {
     next(new Error('Unauthorized'));
   }
+
+  User.findByPk(req.user.id)
+    .then(user => {
+      res.render(req.session.userType + '/editProfile', {
+        pageTitle: 'Edit Profile | Job Board',
+        userInput : user
+      });
+    })
+    .catch(error => {
+      next(error);
+    });
 }
