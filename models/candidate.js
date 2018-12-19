@@ -24,10 +24,29 @@ const Candidate = sequelize.define('candidate', {
     password : {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    github : {
+        type: Sequelize.STRING
+    },
+    stackOverflow : {
+        type: Sequelize.STRING
+    },
+    dribbble : {
+        type: Sequelize.STRING
+    },
+    twitter : {
+        type: Sequelize.STRING
+    },
+    shortIntro : {
+        type: Sequelize.TEXT
+    },
+    longIntro : {
+        type: Sequelize.TEXT
     }
 });
 
-Candidate.beforeValidate(encryptPass);
+Candidate.beforeCreate(encryptPass);
+Candidate.beforeUpdate(encryptPass);
 
 Candidate.prototype.checkPassword = checkPassword;
 

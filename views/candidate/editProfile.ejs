@@ -7,113 +7,115 @@
             <h1 class="title is-1 m-b-10"> <%= user.firstName + ' ' + user.lastName %> </h1>
         </div>
 
-        <div class="field">
-            <label class="label">Email</label>
-            <div class="control has-icons-left">
-                <input class="input" type="email" value=<%=user.email %>>
-                <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-                </span>
-            </div>
-        </div>
-
-        <div class="field">
-            <label class="label">Password</label>
-            <div class="control has-icons-left has-icons-right">
-                <input class="input" type="password" placeholder="Enter new password">
-                <span class="icon is-small is-left">
-                <i class="fas fa-lock"></i>
-                </span>
-            </div>
-        </div>
-
-        <div class="field">
-            <label class="label">Confirm Password</label>
-            <div class="control has-icons-left has-icons-right">
-                <input class="input" type="password" placeholder="Confirm new password">
-                <span class="icon is-small is-left">
-                <i class="fas fa-lock"></i>
-                </span>
-            </div>
-        </div>
-
-        <div class="field">
-            <label class="label">Resume</label>
-            <p>Current Resume:<i class="fas fa-file m-l-5"></i> <span class="has-text-grey">resume.pdf</span></p>
-            <div class="file m-t-15">
-                <label class="file-label">
-                    <input class="file-input" type="file" name="resume">
-                    <span class="file-cta">
-                    <span class="file-icon">
-                        <i class="fas fa-upload"></i>
+        <form action="/candidate/profile/edit" method="POST">
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="email" name="email" value="<%= userInput.email %>">
+                    <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
                     </span>
-                    <span class="file-label">
-                        Upload New Resume
+                </div>
+            </div>
+    
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="password" placeholder="Enter new password" name="password">
+                    <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
                     </span>
+                </div>
+            </div>
+    
+            <div class="field">
+                <label class="label">Confirm Password</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="password" placeholder="Confirm new password" name="confirmPassword">
+                    <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
                     </span>
-                </label>
+                </div>
             </div>
-        </div>
-
-        <div class="field">
-            <label class="label">Github</label>
-            <div class="control has-icons-left has-icons-right">
-            <input class="input" type="text" placeholder="Add your Github profile url">
-            <span class="icon is-small is-left">
-            <i class="fab fa-github"></i>
-            </span>
-        </div>
-
-        <div class="field m-t-10">
-            <label class="label">Stack Overflow</label>
-            <div class="control has-icons-left has-icons-right">
-                <input class="input" type="text" placeholder="Add your Stack Overflow profile url">
+    
+            <div class="field">
+                <label class="label">Resume</label>
+                <p>Current Resume:<i class="fas fa-file m-l-5"></i> <span class="has-text-grey">resume.pdf</span></p>
+                <div class="file m-t-15">
+                    <label class="file-label">
+                        <input class="file-input" type="file" name="resume">
+                        <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                            Upload New Resume
+                        </span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+    
+            <div class="field">
+                <label class="label">Github</label>
+                <div class="control has-icons-left has-icons-right">
+                <input class="input" type="text" placeholder="Add your Github profile url" name="github" value="<%= userInput.github %>">
                 <span class="icon is-small is-left">
-                <i class="fab fa-stack-overflow"></i>
+                <i class="fab fa-github"></i>
                 </span>
             </div>
-        </div>
-
-        <div class="field m-t-10">
-            <label class="label">Dribbble</label>
-            <div class="control has-icons-left has-icons-right">
-                <input class="input" type="text" placeholder="Add your Dribbble profile url">
-                <span class="icon is-small is-left">
-                <i class="fab fa-dribbble"></i>
-                </span>
+    
+            <div class="field m-t-10">
+                <label class="label">Stack Overflow</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" placeholder="Add your Stack Overflow profile url" name="stackOverflow" value="<%= userInput.stackOverflow %>">
+                    <span class="icon is-small is-left">
+                    <i class="fab fa-stack-overflow"></i>
+                    </span>
+                </div>
             </div>
-        </div>
-
-        <div class="field m-t-10">
-            <label class="label">Twitter</label>
-            <div class="control has-icons-left has-icons-right">
-                <input class="input" type="text" placeholder="Add your Twitter profile url">
-                <span class="icon is-small is-left">
-                <i class="fab fa-twitter"></i>
-                </span>
+    
+            <div class="field m-t-10">
+                <label class="label">Dribbble</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" placeholder="Add your Dribbble profile url" name="dribbble" value="<%= userInput.dribbble %>">
+                    <span class="icon is-small is-left">
+                    <i class="fab fa-dribbble"></i>
+                    </span>
+                </div>
             </div>
-        </div>
-
-
-        <div class="field">
-            <label class="label">Short Intro</label>
-            <div class="control">
-                <textarea class="textarea" placeholder="Please provide a short intro about yourself. Hirers will see this first so be concise 😃"></textarea>
+    
+            <div class="field m-t-10">
+                <label class="label">Twitter</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" placeholder="Add your Twitter profile url" name="twitter" value="<%= userInput.twitter %>">
+                    <span class="icon is-small is-left">
+                    <i class="fab fa-twitter"></i>
+                    </span>
+                </div>
             </div>
-        </div>
-
-        <div class="field">
-            <label class="label">Long Intro</label>
-            <div class="control">
-                <textarea class="textarea" placeholder="Please provide a more detailed intro about yourself. Interested hirers will see so treat this like a cover letter"></textarea>
+    
+    
+            <div class="field">
+                <label class="label">Short Intro</label>
+                <div class="control">
+                    <textarea class="textarea" placeholder="Please provide a short intro about yourself. Hirers will see this first so be concise 😃" name="shortIntro"><%= userInput.shortIntro %></textarea>
+                </div>
             </div>
-        </div>
-
-         <div class="columns">    
-            <div class="column">
-                <a class="button is-success is-pulled-right m-t-10"><i class="fas fa-save m-r-10"></i>Save Changes</a>
+    
+            <div class="field">
+                <label class="label">Long Intro</label>
+                <div class="control">
+                    <textarea class="textarea" placeholder="Please provide a more detailed intro about yourself. Interested hirers will see so treat this like a cover letter" name="longIntro"><%= userInput.longIntro %></textarea>
+                </div>
             </div>
-        </div>
+    
+             <div class="columns">    
+                <div class="column">
+                    <button type="submit" class="button is-success is-pulled-right m-t-10"><i class="fas fa-save m-r-10"></i>Save Changes</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 </main>
