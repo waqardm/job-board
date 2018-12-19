@@ -1,7 +1,7 @@
 const Candidate = require('../models/candidate');
 const { validationResult } = require('express-validator/check');
 
-const companyName = 'Nubee.Tech';
+const companyName = 'nubee.tech';
 
 //Renders Candidate Login Page
 module.exports.getLogin = (req, res) => {

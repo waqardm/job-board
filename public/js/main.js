@@ -3,6 +3,25 @@ function submitLogout(btn) {
     form.submit();
 }
 
+// show/hide job details
+if(window.location.pathname === '/'){
+    const detailsButton = document.getElementById('detailsButton');
+    const hiddenDetails = document.getElementById('hidden-job-details');
+    
+    detailsButton.addEventListener("click", showsJobDetails);
+    hiddenDetails.style.display = 'none';
+
+    function showsJobDetails() {
+        if (hiddenDetails.style.display === 'block') {
+            hiddenDetails.style.display = 'none';
+            details.innerHTML = 'Show Details';
+        } else {
+            hiddenDetails.style.display = 'block';
+            detailsButton.innerHTML = 'Hide Details';
+        }
+    }
+}
+
 //Candidate && Hirer Dashboard tab management
 
 if(window.location.pathname == '/dashboard'){

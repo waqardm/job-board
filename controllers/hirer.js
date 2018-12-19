@@ -1,7 +1,7 @@
 const Hirer = require('../models/hirer');
 const Job = require('../models/job');
 const { validationResult } = require('express-validator/check');
-const companyName = "Nubee.Tech";
+const companyName = "nubee.tech";
 
 //Renders Hirer Register Page
 module.exports.getRegister = (req, res) => {

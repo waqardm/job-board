@@ -4,9 +4,9 @@
             <div class="columns is-mobile">
                 <div class="column is-three-quarters p-l-75 p-r-20">
                     <div>
-                        <p class="subtitle is-4 m-t-50">
-                            Our mission is to help people new to tech in to their first jobs. Our partner companies are newbie-friendly so
-                            will be great in helping you candidates grow in their first role 🎉.
+                        <p class="subtitle is-4">
+                            👋, welcome to <strong>nubee.tech</strong>. Our mission is to help people new to tech in to their first jobs. Our partner companies are nubee-friendly so
+                            will be great in helping you grow in your first role 🎉.
                         </p>
                     </div> <!-- intro-->
 
@@ -14,94 +14,17 @@
 
                     <div class="field is-horizontal listing">
                         <div class="field-label is-medium">
-                            <label class="label">Search</label>
+                            <label class="label">Filter</label>
                         </div>
                         <div class="field-body">
                             <div class="field">
                             <div class="control">
-                                <input class="input is-medium is-three-quarters" type="text" placeholder="Search results by location, role, or stack">
+                                <input class="input is-medium is-three-quarters" type="text" placeholder="Search results by location or role">
                             </div>
                             </div>
                         </div>
-                    </div>
-                        <div class="m-t-50"></div>
-                        <div class="listing">
-                            <article class="media p-t-10 p-l-10">
-                                <figure class="media-left">
-                                    <p class="image is-75x75">
-                                        <img src="https://bulma.io/images/placeholders/128x128.png">
-                                    </p>
-                                </figure>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p class="is-size-5">
-                                            <strong class="is-size-4"> 💼 Company Name</strong>
-                                            <span class="m-l-10 is-size-4">🗺</span>Location
-                                            <span class="m-l-10 is-size-4">💵</span> $30,000
-                                            <br>
-                                            <span class="is-size-4">👩‍💻👨‍💻</span> Javascript Developer<br>
-                                        </p>
-                                    </div>
-                                    <p class="is-pulled-left button is-text">Details</p>
-                                    <nav class="level is-mobile is-pulled-right">
-                                        <div class="level-left">
-                                            <a class="level-item button is-danger"><i class="fas fa-heart m-r-5"></i>Save</a>
-                                            <a class="level-item button is-success"><i class="fas fa-pen m-r-5"></i>Apply</a>
-                                            <a class="level-item">
-                                                <span class="icon is-small"></i></span>
-                                            </a>
-                                        </div>
-                                    </nav>
-                                </div>
-                            </article>
-                        </div><!-- job listing-->
-
-                        <div class="listing">
-                            <article class="media p-t-10 p-l-10">
-                                <figure class="media-left">
-                                    <p class="image is-75x75">
-                                        <img src="https://bulma.io/images/placeholders/128x128.png">
-                                    </p>
-                                </figure>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p class="is-size-5">
-                                            <strong class="is-size-4"> 💼 Company Name</strong>
-                                            <span class="m-l-10 is-size-4">🗺</span>Location
-                                            <span class="m-l-10 is-size-4">💵</span> $30,000
-                                            <br>
-                                            <span class="is-size-4">👩‍💻👨‍💻</span> Javascript Developer<br>
-                                        </p>
-                                    </div>
-                                    <hr class="listing-divider">
-                                    <h4 class="is-size-4 m-b-5">About the Company</h4>
-                                    <p>
-                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                    </p>
-
-                                    <h4 class="is-size-4 m-t-10 m-b-5">The Role</h4>
-                                    <p>
-                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                    </p>
-
-                                     <h4 class="is-size-4 m-t-10 m-b-5">About You</h4>
-                                    <p>
-                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                    </p>
-                                    
-                                    <nav class="level is-mobile is-pulled-right">
-                                        <div class="level-left">
-                                            <a class="level-item button is-danger"><i class="fas fa-heart m-r-5"></i>Save</a>
-                                            <a class="level-item button is-success"><i class="fas fa-pen m-r-5"></i>Apply</a>
-                                            <a class="level-item">
-                                                <span class="icon is-small"></i></span>
-                                            </a>
-                                        </div>
-                                    </nav>
-                                </div>
-                            </article>
-                        </div><!-- job listing-->
-
+                    </div>  
+                    <%- include('inc/index-job-listing') %>
                 </div> <!-- first column-->
 
                 <% if(locals.userType == 'hirer') { %>

@@ -1,6 +1,6 @@
 const Hirer = require('../models/hirer');
 const Candidate = require('../models/candidate');
-const companyName = "Nubee.Tech";
+const companyName = "nubee.tech";
 
 // Renders Index Page
 module.exports.getIndex = (req, res) => {
