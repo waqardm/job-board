@@ -3,53 +3,32 @@ function submitLogout(btn) {
     form.submit();
 }
 
+//Candidate && Hirer Dashboard tab management
 
-// //applications && jobList tab --> Hirer
-// const applicationsTab = document.getElementById('applications-tab');
-// const jobsTab = document.getElementById('jobs-listed-tab');
-// applicationsTab.addEventListener('click', applications);
-// jobsTab.addEventListener('click', jobs);
+if(window.location.pathname == '/dashboard'){
+    const tab1Tab = document.getElementById('tab1-tab');
+    const tab2Tab = document.getElementById('tab2-tab');
+    tab1Tab.addEventListener('click', tab1Show);
+    tab2Tab.addEventListener('click', tab2Show);
 
-// const applicationsDiv = document.getElementById('applications');
-// const jobsDiv = document.getElementById('jobs-listed');
-//jobsDiv.style.display = "none";
+    const tab1Div = document.getElementById('tab1-div');
+    const tab2Div = document.getElementById('tab2-div');
 
-// //divs
-// function applications() {
-//     applicationsTab.classList.add('is-active');
-//     jobsTab.classList.remove(is-active');
-//     applicationsDiv.style.display = 'block';
-//     jobsDiv.style.display = 'none';
-// }
 
-// function jobs() {
-//     jobsTab.classList.add('is-active');
-//     jobsDiv.style.display = 'block';
-//     applicationsTab.classList.remove('is-active');
-//     applicationsDiv.style.display = 'none';
-// }
+    //divs
+    function tab1Show() {
+        tab1Tab.classList.add('is-active');
+        tab2Tab.classList.remove('is-active');
+        tab1Div.style.display = 'block';
+        tab2Div.style.display = 'none';
+    }
 
-//saved && applied tabs --> candidate
-const savedTab = document.getElementById('saved-tab');
-const appliedTab = document.getElementById('applied-tab');
-savedTab.addEventListener('click', savedJobs);
-appliedTab.addEventListener('click', appliedJobs);
-
-const savedDiv = document.getElementById('saved');
-const appliedDiv = document.getElementById('applied');
-appliedDiv.style.display = 'none';
-
-function savedJobs() {
-    savedTab.classList.add('is-active');
-    appliedTab.classList.remove('is-active');
-    savedDiv.style.display = 'block';
-    appliedDiv.style.display = 'none';
+    function tab2Show() {
+        tab2Tab.classList.add('is-active');
+        tab2Div.style.display = 'block';
+        tab1Tab.classList.remove('is-active');
+        tab1Div.style.display = 'none';
+    }
 }
 
-function appliedJobs() {
-    appliedTab.classList.add('is-active');
-    savedTab.classList.remove('is-active');
-    appliedDiv.style.display = 'block';
-    savedDiv.style.display = 'none';
-}
 
