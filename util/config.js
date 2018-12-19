@@ -3,7 +3,7 @@ module.exports = {
     DB: {
         DB_NAME: 'job_board',
         USER: 'root',
-        PASSWORD: '',
+        PASSWORD: 'password',
         PORT: 3306,
         HOST: 'localhost'
     },

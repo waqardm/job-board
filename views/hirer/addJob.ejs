@@ -8,55 +8,57 @@
             <p class="title is-4">🏢 Company Name</p>
         </div>
 
-        <div class="field">
-            <label class="label">Position Available</label>
-            <div class="control has-icons-left">
-                <input class="input" type="text" placeholder="e.g. Javascript Developer">
-                <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-                </span>
+        <form action="/hirer/job/add" method="POST">
+            <div class="field">
+                <label class="label">Position Available</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="e.g. Javascript Developer" name="positionAvailable" value="<%= locals.userInput? userInput.positionAvailable : '' %>">
+                    <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                    </span>
+                </div>
             </div>
-        </div>
-
-        <div class="field">
-            <label class="label">Salary</label>
-            <div class="control has-icons-left">
-                <input class="input" type="text" placeholder="Please enter annual salary rate">
-                <span class="icon is-small is-left">
-                <i class="fas fa-dollar-sign"></i>
-                </span>
+    
+            <div class="field">
+                <label class="label">Salary</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="number" step="0.1" placeholder="Please enter annual salary rate" name="salary" value="<%= locals.userInput? userInput.salary : '' %>">
+                    <span class="icon is-small is-left">
+                    <i class="fas fa-dollar-sign"></i>
+                    </span>
+                </div>
             </div>
-        </div>
-
-        <div class="field">
-            <label class="label">Location</label>
-            <div class="control has-icons-left">
-                <input class="input" type="text" placeholder="Location for role e.g. remote or NYC">
-                <span class="icon is-small is-left">
-                <i class="fas fa-map-pin"></i>
-                </span>
+    
+            <div class="field">
+                <label class="label">Location</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="Location for role e.g. remote or NYC" name="location" value="<%= locals.userInput? userInput.location : '' %>">
+                    <span class="icon is-small is-left">
+                    <i class="fas fa-map-pin"></i>
+                    </span>
+                </div>
             </div>
-        </div>
-        
-        <div class="field">
-            <label class="label">About The Role</label>
-            <div class="control">
-                <textarea class="textarea" placeholder="Please put as much detail as possible. Examples could be what a day/week will look like for the candidate"></textarea>
+            
+            <div class="field">
+                <label class="label">About The Role</label>
+                <div class="control">
+                    <textarea class="textarea" placeholder="Please put as much detail as possible. Examples could be what a day/week will look like for the candidate" name="aboutTheRole"><%= locals.userInput? userInput.aboutTheRole : '' %></textarea>
+                </div>
             </div>
-        </div>
-
-        <div class="field">
-            <label class="label">Candidate Details</label>
-            <div class="control">
-                <textarea class="textarea" placeholder="What are you looking for in the candidate. e.g tech stack, experience"></textarea>
+    
+            <div class="field">
+                <label class="label">Candidate Details</label>
+                <div class="control">
+                    <textarea class="textarea" placeholder="What are you looking for in the candidate. e.g tech stack, experience" name="candidateDetails"><%= locals.userInput? userInput.candidateDetails : '' %></textarea>
+                </div>
             </div>
-        </div>
-
-         <div class="columns">    
-            <div class="column">
-                <a class="button is-success is-pulled-right m-t-10"><i class="fas fa-plus-circle m-r-10"></i>Add Job</a>
+    
+             <div class="columns">    
+                <div class="column">
+                    <button type="submit" class="button is-success is-pulled-right m-t-10"><i class="fas fa-plus-circle m-r-10"></i>Add Job</button>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 </main>

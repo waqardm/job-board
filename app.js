@@ -18,6 +18,8 @@ const candidateRouter = require('./routers/candidate');
 
 // Importing Models
 const Candidate = require('./models/candidate');
+const Hirer = require('./models/hirer');
+const Job = require('./models/job');
 
 // Initializing App
 const app = express();
@@ -50,6 +52,10 @@ app.use((error, req, res, next) => {
         pageTitle: 'Server Error'
     })
 })
+
+
+// Defining Database Relations
+Job.belongsTo(Hirer);
 
 // Connecting To Database
 sequelize.sync()

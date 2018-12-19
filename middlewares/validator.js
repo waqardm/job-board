@@ -27,3 +27,27 @@ module.exports.loginValidator = [
         .normalizeEmail()
         .withMessage('Invalid Email'),
 ]
+
+module.exports.addJobValidator = [
+    body('positionAvailable')
+        .not()
+        .isEmpty()
+        .withMessage('Position Available Cannot be empty'),
+    body('salary')
+        .not()
+        .isEmpty()
+        .isNumeric()
+        .withMessage('Salary should be a number'),
+    body('location')
+        .not()
+        .isEmpty()
+        .withMessage('Location Cannot be empty'),
+    body('aboutTheRole')
+        .not()
+        .isEmpty()
+        .withMessage('About the role Cannot be empty'),
+    body('candidateDetails')
+        .not()
+        .isEmpty()
+        .withMessage('Candidate Details Cannot be empty'),
+]

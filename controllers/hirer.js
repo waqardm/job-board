@@ -1,4 +1,5 @@
 const Hirer = require('../models/hirer');
+const Job = require('../models/job');
 const { validationResult } = require('express-validator/check');
 
 //Renders Hirer Register Page
@@ -171,6 +172,48 @@ module.exports.postLogin = (req, res, next) => {
                     errors: errors
                 });
             }
+        })
+        .catch(error => {
+            next(error);
+        });
+}
+
+// Handles Adding Job
+module.exports.postAddJob = (req, res, next) => {
+
+    const userInput = {
+        positionAvailable: req.body.positionAvailable,
+        salary: req.body.salary,
+        location: req.body.location,
+        aboutTheRole: req.body.aboutTheRole,
+        candidateDetails: req.body.candidateDetails
+    }
+
+    // Extracting Validation Errors from Express Validator
+    const validationError = validationResult(req).array();
+
+    // If Validation Error Exists Render the Sign Up page with Error Message and old User Input
+    if(validationError.length > 0) {
+        let errors = validationError.map(obj => obj.msg);
+        console.log(errors);
+        return res.status(422).render('hirer/addJob', {
+            pageTitle: 'Add Job | Job Board',
+            userInput: userInput,  
+            errors: errors
+        });
+    }
+
+    // Adding hirer Id to Job
+    userInput.hirerId = req.user.id;
+
+    // Creating Job
+    const job = new Job(userInput);
+
+    // Saving Job
+    job.save()
+        .then(() => {
+            req.flash('success', ['Job Added Successfully']);
+            res.redirect('/dashboard');
         })
         .catch(error => {
             next(error);

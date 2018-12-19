@@ -11,6 +11,8 @@ router.get('/login', hirerController.getLogin);
 
 router.get('/job/add', authenticator('hirer'), hirerController.getAddJob);
 
+router.post('/job/add', authenticator('hirer'), validator.addJobValidator, hirerController.postAddJob);
+
 router.get('/job/edit', authenticator('hirer'), hirerController.getEditJob);
 
 router.post('/register', validator.registerValidator, hirerController.postRegister);
