@@ -212,3 +212,19 @@ module.exports.postAddJob = (req, res, next) => {
             next(error);
         });
 }
+
+// Renders My Jobs Page
+module.exports.getMyJobs = (req, res, next) => {
+
+    // Get all Jobs
+    Job.findAll({ where: { hirerId : req.user.id } })
+        .then(jobs => {
+            res.render('hirer/jobs', {
+                pageTitle: 'My Jobs',
+                jobs: jobs
+            });
+        })
+        .catch(error => {
+            next(error);
+        });
+}

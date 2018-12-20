@@ -1,4 +1,5 @@
 const Candidate = require('../models/candidate');
+const Job = require('../models/job');
 const { validationResult } = require('express-validator/check');
 
 const companyName = 'nubee.tech';
@@ -192,6 +193,23 @@ module.exports.postEditProfile = (req, res, next) => {
                 req.flash('success', ['Profile Edited Successfully']);
                 res.redirect('/profile');
             }
+        })
+        .catch(error => {
+            next(error);
+        });
+}
+
+
+// Renders Jobs Page
+module.exports.getJobs = (req, res, next) => {
+
+    // Get all Jobs
+    Job.findAll()
+        .then(jobs => {
+            res.render('candidate/jobs', {
+                pageTitle: 'Jobs',
+                jobs: jobs
+            });
         })
         .catch(error => {
             next(error);

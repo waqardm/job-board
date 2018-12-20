@@ -15,4 +15,6 @@ router.post('/login', validator.loginValidator, candidateController.postLogin);
 
 router.post('/profile/edit', authenticator('candidate'), candidateController.postEditProfile);
 
+router.get('/jobs', authenticator('candidate'), candidateController.getJobs);
+
 module.exports = router;
