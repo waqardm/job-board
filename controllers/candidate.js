@@ -21,6 +21,13 @@ module.exports.getRegister = (req, res) => {
 // Handles Candidate Registration
 module.exports.postRegister = (req, res, next) => {
     
+    const userInput = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: req.body.password,
+    };
+
     // Extracting Validation Errors from Express Validator
     const validationError = validationResult(req).array();
 
@@ -29,12 +36,7 @@ module.exports.postRegister = (req, res, next) => {
         let errors = validationError.map(obj => obj.msg);
         return res.status(422).render('candidate/register', {
             pageTitle: 'Candidate Register ' + companyName + ' - Helping newbies find great places to work 🎉',
-            userInput: {
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                password: req.body.password,
-            },
+            userInput: userInput,
             errors: errors
         });
     }
@@ -50,24 +52,13 @@ module.exports.postRegister = (req, res, next) => {
                 const errors = ['Email Already Exists'];
                 return res.status(422).render('candidate/register', {
                     pageTitle: 'Candidate Register | ' + companyName + ' - Helping newbies find great places to work 🎉',
-                    userInput: {
-                        firstName: req.body.firstName,
-                        lastName: req.body.lastName,
-                        email: req.body.email,
-                        password: req.body.password,
-                        confirmPassword: req.body.confirmPassword
-                    },
+                    userInput: userInput,
                     errors: errors
                 });
             } else {
 
                 // If no candidate is found with the same email create new user
-                const candidate = new Candidate({
-                    firstName: req.body.firstName,
-                    lastName: req.body.lastName,
-                    email: req.body.email,
-                    password: req.body.password
-                });
+                const candidate = new Candidate(userInput);
 
                 // Save the new candidate into database
                 candidate.save()

@@ -34,6 +34,14 @@ module.exports.getEditJob = (req, res) => {
 
 // Handles Hirer Registration
 module.exports.postRegister = (req, res, next) => {
+
+    const userInput = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        companyName: req.body.companyName,
+        email: req.body.email,
+        password: req.body.password,
+    };
     
     // Extracting Validation Errors from Express Validator
     const validationError = validationResult(req).array();
@@ -43,12 +51,7 @@ module.exports.postRegister = (req, res, next) => {
         let errors = validationError.map(obj => obj.msg);
         return res.status(422).render('hirer/register', {
             pageTitle: 'hirer Register | ' + companyName + ' - Helping newbies find great places to work 🎉',
-            userInput: {
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                password: req.body.password,
-            },
+            userInput: userInput,
             errors: errors
         });
     }
@@ -64,24 +67,13 @@ module.exports.postRegister = (req, res, next) => {
                 const errors = ['Email Already Exists'];
                 return res.status(422).render('hirer/register', {
                     pageTitle: 'Hirer Register | ' + companyName + ' - Helping newbies find great places to work 🎉',
-                    userInput: {
-                        firstName: req.body.firstName,
-                        lastName: req.body.lastName,
-                        email: req.body.email,
-                        password: req.body.password,
-                        confirmPassword: req.body.confirmPassword
-                    },
+                    userInput: userInput,
                     errors: errors
                 });
             } else {
 
                 // If no hirer is found with the same email create new user
-                const hirer = new Hirer({
-                    firstName: req.body.firstName,
-                    lastName: req.body.lastName,
-                    email: req.body.email,
-                    password: req.body.password
-                });
+                const hirer = new Hirer(userInput);
 
                 // Save the new hirer into database
                 hirer.save()

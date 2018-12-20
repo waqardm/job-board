@@ -9,7 +9,7 @@ router.get('/register', candidateController.getRegister);
 
 router.get('/login', candidateController.getLogin);
 
-router.post('/register', validator.registerValidator, candidateController.postRegister);
+router.post('/register', validator.candidateRegisterValidator, candidateController.postRegister);
 
 router.post('/login', validator.loginValidator, candidateController.postLogin);
 
