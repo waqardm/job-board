@@ -1,32 +1,33 @@
 const Hirer = require('../models/hirer');
 const Job = require('../models/job');
 const { validationResult } = require('express-validator/check');
+const companyName = "nubee.tech";
 
 //Renders Hirer Register Page
 module.exports.getRegister = (req, res) => {
     res.render('hirer/register', {
-        pageTitle: 'Hirer Register | Job Board'
+        pageTitle: 'Hirer Register | ' + companyName + ' - Helping newbies find great places to work 🎉'
     })
 }
 
 //Renders Hirer Login Page
 module.exports.getLogin = (req, res) => {
     res.render('hirer/login', {
-        pageTitle: 'Hirer Login | Job Board'
+        pageTitle: 'Hirer Login | ' + companyName + ' - Helping newbies find great places to work 🎉'
     });
 }
 
 //Renders Add Job Page
 module.exports.getAddJob = (req, res) => {
     res.render('hirer/addJob', {
-        pageTitle: 'Add Job | Job Board'
+        pageTitle: 'Add Job | ' + companyName + ' - Helping newbies find great places to work 🎉'
     });
 }
 
 //Renders Edit Job Page
 module.exports.getEditJob = (req, res) => {
     res.render('hirer/editJob', {
-        pageTitle: 'Edit Job | Job Board'
+        pageTitle: 'Edit Job | ' + companyName + ' - Helping newbies find great places to work 🎉'
     });
 }
 
@@ -41,7 +42,7 @@ module.exports.postRegister = (req, res, next) => {
     if(validationError.length > 0) {
         let errors = validationError.map(obj => obj.msg);
         return res.status(422).render('hirer/register', {
-            pageTitle: 'hirer Register | Job Board',
+            pageTitle: 'hirer Register | ' + companyName + ' - Helping newbies find great places to work 🎉',
             userInput: {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
@@ -62,7 +63,7 @@ module.exports.postRegister = (req, res, next) => {
             if(count > 0) {
                 const errors = ['Email Already Exists'];
                 return res.status(422).render('hirer/register', {
-                    pageTitle: 'Hirer Register | Job Board',
+                    pageTitle: 'Hirer Register | ' + companyName + ' - Helping newbies find great places to work 🎉',
                     userInput: {
                         firstName: req.body.firstName,
                         lastName: req.body.lastName,
@@ -114,7 +115,7 @@ module.exports.postLogin = (req, res, next) => {
     if(validationError.length > 0) {
         let errors = validationError.map(obj => obj.msg);
         return res.status(422).render('hirer/login', {
-            pageTitle: 'Hirer Login | Job Board',
+            pageTitle: 'Hirer Login | ' + companyName + ' - Helping newbies find great places to work 🎉',
             userInput: {
                 email: req.body.email,
                 password: req.body.password,
@@ -147,7 +148,7 @@ module.exports.postLogin = (req, res, next) => {
                         } else {
                             let errors = ['Invalid Credentials'];
                             return res.status(422).render('hirer/login', {
-                                pageTitle: 'Hirer Login | Job Board',
+                                pageTitle: 'Hirer Login | ' + companyName + ' - Helping newbies find great places to work 🎉',
                                 userInput: {
                                     email: req.body.email,
                                     password: req.body.password,
@@ -164,7 +165,7 @@ module.exports.postLogin = (req, res, next) => {
                 // If no hirer exists render the same page with error message
                 let errors = ['Invalid Credentials'];
                 return res.status(422).render('hirer/login', {
-                    pageTitle: 'Hirer Login | Job Board',
+                    pageTitle: 'Hirer Login | ' + companyName + ' - Helping newbies find great places to work 🎉',
                     userInput: {
                         email: req.body.email,
                         password: req.body.password,
@@ -197,7 +198,7 @@ module.exports.postAddJob = (req, res, next) => {
         let errors = validationError.map(obj => obj.msg);
         console.log(errors);
         return res.status(422).render('hirer/addJob', {
-            pageTitle: 'Add Job | Job Board',
+            pageTitle: 'Add Job | ' + companyName + ' - Helping newbies find great places to work 🎉',
             userInput: userInput,  
             errors: errors
         });

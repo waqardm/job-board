@@ -32,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Setting Initial Middlewares
 app.use(initialMiddleware);
+app.use(express.static("public"));
 
 // Setting routes
 app.use(generalRouter);
